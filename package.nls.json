@@ -11,8 +11,17 @@
 	"vuejs.generator.project.maintainer": "Maintainer",
 	"vuejs.generator.generateCustomComponent": "Generate Custom Component",
 	"vuejs.generator.generateComponent": "Generate Component",
+	"vuejs.generator.generatePage": "Generate Page",
 	"vuejs.generator.generateStore": "Generate Store",
 	"vuejs.generator.generateRouter": "Generate Router",
 	"vuejs.generator.generateComposable": "Generate Composable",
-	"vuejs.generator.generateDirective": "Generate Directive"
+	"vuejs.generator.generateDirective": "Generate Directive",
+	"vuejs.generator.generateMiddleware": "Generate Middleware",
+	"vuejs.generator.generateModel": "Generate Model",
+	"vuejs.generator.generateLayout": "Generate Layout",
+	"vuejs.generator.generateService": "Generate Service",
+	"vuejs.generator.generateTest": "Generate Test",
+	"vuejs.generator.generateEnum": "Generate Enum",
+	"vuejs.generator.generateConstant": "Generate Constant",
+	"vuejs.generator.generateHook": "Generate Hook"
 }
