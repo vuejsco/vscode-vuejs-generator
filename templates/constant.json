@@ -1,0 +1,9 @@
+{
+	"name": "constant",
+	"description": "Global Constants",
+	"type": "ts",
+	"template": [
+		"export const APP_NAME = 'My App';",
+		"export const API_URL = 'https://api.example.com';"
+	]
+}

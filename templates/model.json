@@ -1,0 +1,12 @@
+{
+	"name": "model",
+	"description": "TypeScript Model Interface",
+	"type": "ts",
+	"template": [
+		"export interface User {",
+		"  id: number;",
+		"  name: string;",
+		"  email: string;",
+		"}"
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"name": "layout",
+	"description": "Vue Layout Component (Use this to create a new layout)",
+	"type": "vue",
+	"template": [
+		"<template>",
+		"  <div>",
+		"    <slot />",
+		"  </div>",
+		"</template>",
+		"",
+		"<script setup>",
+		"// Layout logic here",
+		"</script>"
+	]
+}

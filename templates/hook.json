@@ -1,0 +1,13 @@
+{
+	"name": "hook",
+	"description": "Vue Composition API Hook",
+	"type": "ts",
+	"template": [
+		"import { ref } from \"vue\";",
+		"",
+		"export function useAuth() {",
+		"  const isAuthenticated = ref(false);",
+		"  return { isAuthenticated };",
+		"}"
+	]
+}

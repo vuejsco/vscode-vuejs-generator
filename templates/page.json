@@ -1,0 +1,17 @@
+{
+	"name": "page",
+	"description": "Full Page Component (Use this to create a new page)",
+	"type": "vue",
+	"template": [
+		"<template>",
+		"  <div>",
+		"    <h1>{{ fileName }}</h1>",
+		"  </div>",
+		"</template>",
+		"",
+		"<script setup>",
+		"import { ref } from \"vue\";",
+		"const title = ref('My Page');",
+		"</script>"
+	]
+}

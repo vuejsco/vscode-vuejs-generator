@@ -1,0 +1,15 @@
+{
+	"name": "middleware",
+	"description": "Middleware for Vue Router or Nitro in Nuxt",
+	"type": "ts",
+	"template": [
+		"export default function authMiddleware(to, from, next) {",
+		"  const isAuthenticated = false; // Implement your authentication logic here",
+		"  if (!isAuthenticated) {",
+		"    next('/login');",
+		"  } else {",
+		"    next();",
+		"  }",
+		"}"
+	]
+}

@@ -1,0 +1,14 @@
+{
+	"name": "test",
+	"description": "Unit Test (Use this to create a new unit test)",
+	"type": "ts",
+	"template": [
+		"import { describe, it, expect } from \"vitest\";",
+		"",
+		"describe('MyComponent', () => {",
+		"  it('should work', () => {",
+		"    expect(true).toBe(true);",
+		"  });",
+		"});"
+	]
+}

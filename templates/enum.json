@@ -1,0 +1,12 @@
+{
+	"name": "enum",
+	"description": "Enum (Use this to create a new enum)",
+	"type": "ts",
+	"template": [
+		"export enum UserRoles {",
+		"  Admin = 'admin',",
+		"  User = 'user',",
+		"  Guest = 'guest'",
+		"}"
+	]
+}
