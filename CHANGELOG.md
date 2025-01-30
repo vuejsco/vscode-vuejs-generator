@@ -1,3 +1,9 @@
+# Changelog
+
+## <small>1.0.1 (2025-01-30)</small>
+
+* chore: update package.json and add release-it configuration ([b96cc3f](https://github.com/vuejsco/vscode-vuejs-generator/commit/b96cc3f))
+
 # Change Log
 
 All notable changes to the "VueJS File Generator" extension will be documented in this file.

@@ -2,7 +2,7 @@
 	"name": "vscode-vuejs-generator",
 	"displayName": "VueJS File Generator",
 	"description": "Simplifies TypeScript development by providing a set of commands to generate boilerplate code for VueJS projects.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"icon": "icon.png",
 	"license": "MIT",
 	"publisher": "imgildev",
