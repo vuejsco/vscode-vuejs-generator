@@ -9,6 +9,8 @@
 
 **VueJS File Generator** is a Visual Studio Code extension designed to streamline the creation of Vue.js files. It generates boilerplate code based on customizable templates, allowing you to quickly create components, services, and other project files according to your needs.
 
+[![VueJS File Generator](https://raw.githubusercontent.com/vuejsco/vscode-vuejs-generator/main/images/demo.gif)](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-vuejs-generator)
+
 ## Table of Contents
 
 - [VueJS File Generator](#vuejs-file-generator)
@@ -36,11 +38,20 @@ The extension provides predefined templates for various Vue.js file types, makin
 
 | File Type    | Description | Example Filename |
 |-------------|-------------|------------------|
-| `component`  | Vue.js Component (Single File Component) | `MyComponent.vue` |
-| `store`      | Pinia Store Module for state management | `useAuthStore.ts` |
-| `composable` | Vue 3 Composable (Reusable function) | `useFetch.ts` |
-| `directive`  | Vue Directive for custom DOM behavior | `v-focus.ts` |
-| `route`      | Vue Router configuration file | `routes.ts` |
+| `component`               | Vue.js Component (Single File Component) | `MyComponent.vue` |
+| `page`                    | Vue.js Page (Common in frameworks like Nuxt) | `HomePage.vue` |
+| `store`                   | Pinia Store Module | `useAuthStore.ts` |
+| `composable`              | Vue 3 Composable (Reusable function) | `useFetch.ts` |
+| `directive`               | Vue Directive | `v-focus.ts` |
+| `middleware`              | Middleware for Nuxt.js | `auth.ts` |
+| `model`                   | TypeScript Model (Interface or Type) | `UserModel.ts` |
+| `layout`                  | Layout Component (Nuxt.js) | `DefaultLayout.vue` |
+| `service`                 | API Service (For Axios or Fetch wrappers) | `AuthService.ts` |
+| `test`                    | Unit Test File (Jest/Vitest) | `MyComponent.spec.ts` |
+| `enum`                    | TypeScript Enum | `UserRoles.ts` |
+| `constant`                | Constants File | `constants.ts` |
+| `hook`                    | Custom React Hook | `useAuth.ts` |
+| `route`                   | Route Configuration File | `routes.ts` |
 
 ## Requirements
 

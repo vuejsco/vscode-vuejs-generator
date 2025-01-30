@@ -262,6 +262,11 @@
 				"category": "VueJS File Generator"
 			},
 			{
+				"command": "vuejs.generator.generatePage",
+				"title": "%vuejs.generator.generatePage%",
+				"category": "VueJS File Generator"
+			},
+			{
 				"command": "vuejs.generator.generateStore",
 				"title": "%vuejs.generator.generateStore%",
 				"category": "VueJS File Generator"
@@ -279,6 +284,46 @@
 			{
 				"command": "vuejs.generator.generateDirective",
 				"title": "%vuejs.generator.generateDirective%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateMiddleware",
+				"title": "%vuejs.generator.generateMiddleware%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateModel",
+				"title": "%vuejs.generator.generateModel%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateLayout",
+				"title": "%vuejs.generator.generateLayout%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateService",
+				"title": "%vuejs.generator.generateService%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateTest",
+				"title": "%vuejs.generator.generateTest%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateEnum",
+				"title": "%vuejs.generator.generateEnum%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateConstant",
+				"title": "%vuejs.generator.generateConstant%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateHook",
+				"title": "%vuejs.generator.generateHook%",
 				"category": "VueJS File Generator"
 			}
 		],
@@ -299,27 +344,63 @@
 			"vuejs.generator.folder.submenu": [
 				{
 					"command": "vuejs.generator.generateCustomComponent",
-					"group": "1_custom@1"
+					"group": "1_custom"
 				},
 				{
 					"command": "vuejs.generator.generateComponent",
-					"group": "2_generics@1"
+					"group": "2_generics"
+				},
+				{
+					"command": "vuejs.generator.generatePage",
+					"group": "2_generics"
 				},
 				{
 					"command": "vuejs.generator.generateStore",
-					"group": "2_generics@2"
+					"group": "2_generics"
 				},
 				{
 					"command": "vuejs.generator.generateRouter",
-					"group": "2_generics@3"
+					"group": "2_generics"
 				},
 				{
 					"command": "vuejs.generator.generateComposable",
-					"group": "2_generics@4"
+					"group": "2_generics"
 				},
 				{
 					"command": "vuejs.generator.generateDirective",
-					"group": "2_generics@5"
+					"group": "2_generics"
+				},
+				{
+					"command": "vuejs.generator.generateMiddleware",
+					"group": "2_generics"
+				},
+				{
+					"command": "vuejs.generator.generateModel",
+					"group": "2_generics"
+				},
+				{
+					"command": "vuejs.generator.generateLayout",
+					"group": "2_generics"
+				},
+				{
+					"command": "vuejs.generator.generateService",
+					"group": "2_generics"
+				},
+				{
+					"command": "vuejs.generator.generateTest",
+					"group": "2_generics"
+				},
+				{
+					"command": "vuejs.generator.generateEnum",
+					"group": "2_generics"
+				},
+				{
+					"command": "vuejs.generator.generateConstant",
+					"group": "2_generics"
+				},
+				{
+					"command": "vuejs.generator.generateHook",
+					"group": "2_generics"
 				}
 			]
 		},
