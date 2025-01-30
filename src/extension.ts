@@ -7,6 +7,7 @@ import {
   GenerateComposableCommand,
   GenerateCustomComponentCommad,
   GenerateDirectiveCommand,
+  GeneratePageCommad,
   GenerateRouterCommad,
   GenerateStoreCommand,
 } from './app/commands';
@@ -168,6 +169,10 @@ export async function activate(context: vscode.ExtensionContext) {
       handler: new GenerateComponentCommad(config, context.extensionUri),
     },
     {
+      name: 'generatePage',
+      handler: new GeneratePageCommad(config, context.extensionUri),
+    },
+    {
       name: 'generateStore',
       handler: new GenerateStoreCommand(config, context.extensionUri),
     },
@@ -181,6 +186,38 @@ export async function activate(context: vscode.ExtensionContext) {
     },
     {
       name: 'generateDirective',
+      handler: new GenerateDirectiveCommand(config, context.extensionUri),
+    },
+    {
+      name: 'generateMiddleware',
+      handler: new GenerateDirectiveCommand(config, context.extensionUri),
+    },
+    {
+      name: 'generateModel',
+      handler: new GenerateDirectiveCommand(config, context.extensionUri),
+    },
+    {
+      name: 'generateLayout',
+      handler: new GenerateDirectiveCommand(config, context.extensionUri),
+    },
+    {
+      name: 'generateService',
+      handler: new GenerateDirectiveCommand(config, context.extensionUri),
+    },
+    {
+      name: 'generateTest',
+      handler: new GenerateDirectiveCommand(config, context.extensionUri),
+    },
+    {
+      name: 'generateEnum',
+      handler: new GenerateDirectiveCommand(config, context.extensionUri),
+    },
+    {
+      name: 'generateConstant',
+      handler: new GenerateDirectiveCommand(config, context.extensionUri),
+    },
+    {
+      name: 'generateHook',
       handler: new GenerateDirectiveCommand(config, context.extensionUri),
     },
   ];
