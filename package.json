@@ -3,7 +3,6 @@
 	"displayName": "VueJS File Generator",
 	"description": "Simplifies TypeScript development by providing a set of commands to generate boilerplate code for VueJS projects.",
 	"version": "1.0.0",
-	"preview": true,
 	"icon": "icon.png",
 	"license": "MIT",
 	"publisher": "imgildev",
@@ -109,8 +108,9 @@
 		"url": "https://github.com/vuejsco/vscode-vuejs-generator/issues"
 	},
 	"activationEvents": [
+		"onLanguage:vue",
 		"onLanguage:typescript",
-		"onLanguage:typescriptreact"
+		"onLanguage:javascript"
 	],
 	"main": "./out/extension.js",
 	"l10n": "./l10n",
@@ -129,12 +129,6 @@
 					"default": false,
 					"scope": "resource",
 					"description": "%vuejs.generator.files.skipFolderConfirmation%"
-				},
-				"vuejs.generator.files.defaultBarrelFileName": {
-					"type": "string",
-					"default": "index",
-					"scope": "resource",
-					"description": "%vuejs.generator.files.defaultBarrelFileName%"
 				},
 				"vuejs.generator.formatting.excludeSemiColonAtEndOfLine": {
 					"type": "boolean",
@@ -346,13 +340,15 @@
 		"lint:check": "biome check --write src",
 		"test": "vscode-test",
 		"compodoc": "npx compodoc -p tsconfig.doc.json -d compodoc --theme readthedocs -s",
-		"prepare": "husky"
+		"prepare": "husky",
+		"release": "release-it"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@commitlint/cli": "^19.6.1",
 		"@commitlint/config-conventional": "^19.6.0",
 		"@compodoc/compodoc": "^1.1.26",
+		"@release-it/conventional-changelog": "^10.0.0",
 		"@types/mocha": "^10.0.10",
 		"@types/mustache": "^4.2.5",
 		"@types/node": "^22.9.0",
@@ -363,6 +359,7 @@
 		"glob": "^11.0.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^15.2.11",
+		"release-it": "^18.1.2",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.7.2"
 	},
