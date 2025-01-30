@@ -1,0 +1,372 @@
+{
+	"name": "vscode-vuejs-generator",
+	"displayName": "VueJS File Generator",
+	"description": "Simplifies TypeScript development by providing a set of commands to generate boilerplate code for VueJS projects.",
+	"version": "1.0.0",
+	"preview": true,
+	"icon": "icon.png",
+	"license": "MIT",
+	"publisher": "imgildev",
+	"author": "vuejsco",
+	"engines": {
+		"vscode": "^1.88.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Other"
+	],
+	"keywords": [
+		"automation",
+		"boilerplate",
+		"code generator",
+		"code",
+		"codegen",
+		"codegenerator",
+		"coding",
+		"command",
+		"component generator",
+		"component template",
+		"component-creator",
+		"component-generator",
+		"component-template",
+		"component",
+		"componentcreator",
+		"componentgenerator",
+		"components",
+		"componenttemplate",
+		"composable",
+		"create component",
+		"create vue component",
+		"create vuejs component",
+		"create vuejs file",
+		"create vuejs structure",
+		"create vuejs",
+		"create",
+		"custom structure",
+		"custom",
+		"dev",
+		"development tools",
+		"development",
+		"directive",
+		"extension",
+		"file structure",
+		"file templates",
+		"file-generator",
+		"file",
+		"files",
+		"folder",
+		"framework",
+		"frontend",
+		"generate",
+		"generator",
+		"html",
+		"javascript",
+		"js",
+		"json",
+		"language",
+		"layout",
+		"mixin",
+		"page",
+		"pages",
+		"plugin",
+		"project scaffolding",
+		"router",
+		"service",
+		"store",
+		"template",
+		"tool",
+		"tools",
+		"ts",
+		"typescript",
+		"vscode extension",
+		"vscode",
+		"vue component",
+		"vue file",
+		"vue generator",
+		"vue js colombia",
+		"vue js",
+		"vue project",
+		"vue structure",
+		"vue template",
+		"vue tool",
+		"vue.js",
+		"vue",
+		"vuejs colombia",
+		"vuejs",
+		"vuejs",
+		"vuejsco",
+		"vuejscolombia",
+		"vuex",
+		"web apps",
+		"web development"
+	],
+	"homepage": "https://github.com/vuejsco/vscode-vuejs-generator",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vuejsco/vscode-vuejs-generator"
+	},
+	"bugs": {
+		"url": "https://github.com/vuejsco/vscode-vuejs-generator/issues"
+	},
+	"activationEvents": [
+		"onLanguage:typescript",
+		"onLanguage:typescriptreact"
+	],
+	"main": "./out/extension.js",
+	"l10n": "./l10n",
+	"contributes": {
+		"configuration": {
+			"title": "VueJS File Generator Configuration",
+			"properties": {
+				"vuejs.generator.enable": {
+					"type": "boolean",
+					"default": true,
+					"scope": "resource",
+					"description": "%vuejs.generator.enable%"
+				},
+				"vuejs.generator.files.skipFolderConfirmation": {
+					"type": "boolean",
+					"default": false,
+					"scope": "resource",
+					"description": "%vuejs.generator.files.skipFolderConfirmation%"
+				},
+				"vuejs.generator.files.defaultBarrelFileName": {
+					"type": "string",
+					"default": "index",
+					"scope": "resource",
+					"description": "%vuejs.generator.files.defaultBarrelFileName%"
+				},
+				"vuejs.generator.formatting.excludeSemiColonAtEndOfLine": {
+					"type": "boolean",
+					"default": false,
+					"scope": "resource",
+					"description": "%vuejs.generator.formatting.excludeSemiColonAtEndOfLine%"
+				},
+				"vuejs.generator.formatting.endOfLine": {
+					"type": "string",
+					"default": "lf",
+					"enum": [
+						"crlf",
+						"lf"
+					],
+					"enumDescriptions": [
+						"Windows (CRLF)",
+						"Unix (LF)"
+					],
+					"scope": "resource",
+					"description": "%vuejs.generator.formatting.endOfLine%"
+				},
+				"vuejs.generator.formatting.headerCommentTemplate": {
+					"type": "array",
+					"default": [],
+					"scope": "resource",
+					"description": "%vuejs.generator.formatting.headerCommentTemplate%"
+				},
+				"vuejs.generator.formatting.insertFinalNewline": {
+					"type": "boolean",
+					"default": true,
+					"scope": "resource",
+					"description": "%vuejs.generator.formatting.insertFinalNewline%"
+				},
+				"vuejs.generator.templates.customComponents": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string",
+								"description": "Name of the template"
+							},
+							"description": {
+								"type": "string",
+								"description": "Description of the template"
+							},
+							"type": {
+								"type": "string",
+								"enum": [
+									"vue",
+									"ts",
+									"js",
+									"html",
+									"css",
+									"scss",
+									"less",
+									"stylus"
+								],
+								"description": "The template type"
+							},
+							"template": {
+								"type": "array",
+								"description": "The template content"
+							}
+						}
+					},
+					"default": [
+						{
+							"name": "Vue Component",
+							"description": "The Vue component",
+							"type": "vue",
+							"template": [
+								"<template>",
+								"  <div>",
+								"    <!-- Your code here -->",
+								"  </div>",
+								"</template>",
+								"",
+								"<script lang=\"ts\">",
+								"import { defineComponent } from \"vue\";",
+								"",
+								"export default defineComponent({",
+								"  name: \"ComponentName\",",
+								"  props: {",
+								"    // Your props here",
+								"  },",
+								"  setup() {",
+								"    // Your code here",
+								"  }",
+								"});",
+								"</script>",
+								"",
+								"<style scoped>",
+								"/* Your styles here */",
+								"</style>"
+							]
+						}
+					],
+					"scope": "resource",
+					"description": "%vuejs.generator.templates.customComponents%"
+				},
+				"vuejs.generator.project.author": {
+					"type": "string",
+					"default": "",
+					"scope": "resource",
+					"description": "%vuejs.generator.project.author%"
+				},
+				"vuejs.generator.project.owner": {
+					"type": "string",
+					"default": "",
+					"scope": "resource",
+					"description": "%vuejs.generator.project.owner%"
+				},
+				"vuejs.generator.project.maintainer": {
+					"type": "string",
+					"default": "",
+					"scope": "resource",
+					"description": "%vuejs.generator.project.maintainer%"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "vuejs.generator.generateCustomComponent",
+				"title": "%vuejs.generator.generateCustomComponent%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateComponent",
+				"title": "%vuejs.generator.generateComponent%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateStore",
+				"title": "%vuejs.generator.generateStore%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateRouter",
+				"title": "%vuejs.generator.generateRouter%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateComposable",
+				"title": "%vuejs.generator.generateComposable%",
+				"category": "VueJS File Generator"
+			},
+			{
+				"command": "vuejs.generator.generateDirective",
+				"title": "%vuejs.generator.generateDirective%",
+				"category": "VueJS File Generator"
+			}
+		],
+		"submenus": [
+			{
+				"id": "vuejs.generator.folder.submenu",
+				"label": "VueJS File Generator"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"submenu": "vuejs.generator.folder.submenu",
+					"group": "2_workspace",
+					"when": "explorerViewletFocus && explorerResourceIsFolder && !explorerResourceIsRoot"
+				}
+			],
+			"vuejs.generator.folder.submenu": [
+				{
+					"command": "vuejs.generator.generateCustomComponent",
+					"group": "1_custom@1"
+				},
+				{
+					"command": "vuejs.generator.generateComponent",
+					"group": "2_generics@1"
+				},
+				{
+					"command": "vuejs.generator.generateStore",
+					"group": "2_generics@2"
+				},
+				{
+					"command": "vuejs.generator.generateRouter",
+					"group": "2_generics@3"
+				},
+				{
+					"command": "vuejs.generator.generateComposable",
+					"group": "2_generics@4"
+				},
+				{
+					"command": "vuejs.generator.generateDirective",
+					"group": "2_generics@5"
+				}
+			]
+		},
+		"jsonValidation": [
+			{
+				"fileMatch": ".vscode/settings.json",
+				"url": "./schemas/config.schema.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "rimraf out && tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"format": "biome format --write src",
+		"lint": "biome lint --write src",
+		"lint:check": "biome check --write src",
+		"test": "vscode-test",
+		"compodoc": "npx compodoc -p tsconfig.doc.json -d compodoc --theme readthedocs -s",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@commitlint/cli": "^19.6.1",
+		"@commitlint/config-conventional": "^19.6.0",
+		"@compodoc/compodoc": "^1.1.26",
+		"@types/mocha": "^10.0.10",
+		"@types/mustache": "^4.2.5",
+		"@types/node": "^22.9.0",
+		"@types/vscode": "^1.88.0",
+		"@vscode/l10n-dev": "^0.0.35",
+		"@vscode/test-cli": "^0.0.10",
+		"@vscode/test-electron": "^2.4.1",
+		"glob": "^11.0.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.2.11",
+		"rimraf": "^6.0.1",
+		"typescript": "^5.7.2"
+	},
+	"dependencies": {
+		"mustache": "^4.2.0"
+	}
+}

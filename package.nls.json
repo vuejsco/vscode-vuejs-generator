@@ -1,0 +1,18 @@
+{
+	"vuejs.generator.enable": "Enable or disable VueJS File Generator",
+	"vuejs.generator.files.skipFolderConfirmation": "Skip destination folder confirmation when generating files",
+	"vuejs.generator.formatting.excludeSemiColonAtEndOfLine": "Exclude semicolon at the end of line",
+	"vuejs.generator.formatting.endOfLine": "End of line character",
+	"vuejs.generator.formatting.headerCommentTemplate": "Header comment template",
+	"vuejs.generator.formatting.insertFinalNewline": "Insert final newline",
+	"vuejs.generator.templates.customComponents": "Custom components templates",
+	"vuejs.generator.project.author": "Author",
+	"vuejs.generator.project.owner": "Owner",
+	"vuejs.generator.project.maintainer": "Maintainer",
+	"vuejs.generator.generateCustomComponent": "Generate Custom Component",
+	"vuejs.generator.generateComponent": "Generate Component",
+	"vuejs.generator.generateStore": "Generate Store",
+	"vuejs.generator.generateRouter": "Generate Router",
+	"vuejs.generator.generateComposable": "Generate Composable",
+	"vuejs.generator.generateDirective": "Generate Directive"
+}

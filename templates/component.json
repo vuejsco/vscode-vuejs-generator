@@ -1,0 +1,22 @@
+{
+	"name": "Vue Component",
+	"description": "The Vue component",
+	"type": "vue",
+	"template": [
+		"<template>",
+		"  <section>",
+		"    <h1>{{fileName}}</h1>",
+		"  </section>",
+		"</template>",
+		"",
+		"<script setup>",
+		"import { ref } from \"vue\";",
+		"",
+		"const data = ref(null);",
+		"</script>",
+		"",
+		"<style scoped>",
+		"/* Your styles here */",
+		"</style>"
+	]
+}

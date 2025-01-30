@@ -1,0 +1,17 @@
+{
+	"name": "Vue Custom Directive",
+	"description": "A custom directive for Vue",
+	"type": "ts",
+	"template": [
+		"import { DirectiveBinding } from \"vue\";",
+		"",
+		"export default {",
+		"  mounted(el: HTMLElement, binding: DirectiveBinding) {",
+		"    // Directive logic here",
+		"  },",
+		"  updated(el: HTMLElement, binding: DirectiveBinding) {",
+		"    // Update logic here",
+		"  }",
+		"};"
+	]
+}

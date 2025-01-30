@@ -1,0 +1,18 @@
+{
+	"name": "Vue Composable",
+	"description": "A Vue composable function",
+	"type": "ts",
+	"template": [
+		"import { ref } from \"vue\";",
+		"",
+		"export function use{{fileName}}() {",
+		"  const data = ref(null);",
+		"",
+		"  function fetchData() {",
+		"    // Fetch data logic here",
+		"  }",
+		"",
+		"  return { data, fetchData };",
+		"}"
+	]
+}

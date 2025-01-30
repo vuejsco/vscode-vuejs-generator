@@ -1,0 +1,130 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"vuejs.generator.enable": {
+			"type": "boolean",
+			"default": true,
+			"scope": "resource",
+			"description": "Enable or disable VueJS File Generator"
+		},
+		"vuejs.generator.files.skipFolderConfirmation": {
+			"type": "boolean",
+			"default": false,
+			"scope": "resource",
+			"description": "Skip destination folder confirmation when generating files"
+		},
+		"vuejs.generator.formatting.excludeSemiColonAtEndOfLine": {
+			"type": "boolean",
+			"default": false,
+			"scope": "resource",
+			"description": "Exclude semicolon at the end of line"
+		},
+		"vuejs.generator.formatting.endOfLine": {
+			"type": "string",
+			"default": "lf",
+			"enum": ["crlf", "lf"],
+			"enumDescriptions": ["Windows (CRLF)", "Unix (LF)"],
+			"scope": "resource",
+			"description": "End of line character"
+		},
+		"vuejs.generator.formatting.headerCommentTemplate": {
+			"type": "array",
+			"default": [],
+			"scope": "resource",
+			"description": "Header comment template"
+		},
+		"vuejs.generator.formatting.insertFinalNewline": {
+			"type": "boolean",
+			"default": true,
+			"scope": "resource",
+			"description": "Insert final newline"
+		},
+		"vuejs.generator.templates.customComponents": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "Name of the template"
+					},
+					"description": {
+						"type": "string",
+						"description": "Description of the template"
+					},
+					"type": {
+						"type": "string",
+						"enum": [
+							"vue",
+							"ts",
+							"js",
+							"html",
+							"css",
+							"scss",
+							"less",
+							"stylus"
+						],
+						"description": "The template type"
+					},
+					"template": {
+						"type": "array",
+						"description": "The template content"
+					}
+				}
+			},
+			"default": [
+				{
+					"name": "Vue Component",
+					"description": "The Vue component",
+					"type": "vue",
+					"template": [
+						"<template>",
+						"  <div>",
+						"    <!-- Your code here -->",
+						"  </div>",
+						"</template>",
+						"",
+						"<script lang=\"ts\">",
+						"import { defineComponent } from \"vue\";",
+						"",
+						"export default defineComponent({",
+						"  name: \"ComponentName\",",
+						"  props: {",
+						"    // Your props here",
+						"  },",
+						"  setup() {",
+						"    // Your code here",
+						"  }",
+						"});",
+						"</script>",
+						"",
+						"<style scoped>",
+						"/* Your styles here */",
+						"</style>"
+					]
+				}
+			],
+			"scope": "resource",
+			"description": "Templates for custom components"
+		}
+	},
+	"vuejs.generator.project.author": {
+		"type": "string",
+		"default": "",
+		"scope": "resource",
+		"description": "Author"
+	},
+	"vuejs.generator.project.owner": {
+		"type": "string",
+		"default": "",
+		"scope": "resource",
+		"description": "Owner"
+	},
+	"vuejs.generator.project.maintainer": {
+		"type": "string",
+		"default": "",
+		"scope": "resource",
+		"description": "Maintainer"
+	}
+}

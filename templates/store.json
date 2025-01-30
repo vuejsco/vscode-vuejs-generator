@@ -1,0 +1,20 @@
+{
+	"name": "Pinia Store",
+	"description": "A Pinia store module",
+	"type": "ts",
+	"template": [
+		"import { defineStore } from \"pinia\";",
+		"",
+		"export const use{{fileName}} = defineStore(\"{{fileName}}\", {",
+		"  state: () => ({",
+		"    // Your state here",
+		"  }),",
+		"  actions: {",
+		"    // Your actions here",
+		"  },",
+		"  getters: {",
+		"    // Your getters here",
+		"  }",
+		"});"
+	]
+}
