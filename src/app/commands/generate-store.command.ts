@@ -25,7 +25,7 @@ export class GenerateStoreCommand extends BaseCommand {
    * @async
    * @method execute
    * @public
-   * @memberof generateStoreCommad
+   * @memberof generateStoreCommand
    *
    * @param {Uri} folderPath - The folder path
    */

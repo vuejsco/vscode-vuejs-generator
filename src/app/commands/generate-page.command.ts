@@ -2,7 +2,7 @@ import { Uri } from 'vscode';
 import { BaseCommand } from './base.command';
 
 /**
- * The GeneratePageCommad class.
+ * The GeneratePageCommand class.
  *
  * @class
  * @classdesc The class that represents the generate page command.
@@ -10,9 +10,9 @@ import { BaseCommand } from './base.command';
  * @export
  * @public
  * @example
- * const command = new GeneratePageCommad(config);
+ * const command = new GeneratePageCommand(config);
  */
-export class GeneratePageCommad extends BaseCommand {
+export class GeneratePageCommand extends BaseCommand {
   // -----------------------------------------------------------------
   // Methods
   // -----------------------------------------------------------------
@@ -25,7 +25,7 @@ export class GeneratePageCommad extends BaseCommand {
    * @async
    * @method execute
    * @public
-   * @memberof generatePageCommad
+   * @memberof generatePageCommand
    *
    * @param {Uri} folderPath - The folder path
    */

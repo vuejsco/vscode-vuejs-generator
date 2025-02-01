@@ -25,7 +25,7 @@ export class GenerateDirectiveCommand extends BaseCommand {
    * @async
    * @method execute
    * @public
-   * @memberof generateDirectiveCommad
+   * @memberof generateDirectiveCommand
    *
    * @param {Uri} folderPath - The folder path
    */

@@ -2,7 +2,7 @@ import { Uri } from 'vscode';
 import { BaseCommand } from './base.command';
 
 /**
- * The GenerateLayoutCommad class.
+ * The GenerateLayoutCommand class.
  *
  * @class
  * @classdesc The class that represents the generate layout command.
@@ -10,9 +10,9 @@ import { BaseCommand } from './base.command';
  * @export
  * @public
  * @example
- * const command = new GenerateLayoutCommad(config);
+ * const command = new GenerateLayoutCommand(config);
  */
-export class GenerateLayoutCommad extends BaseCommand {
+export class GenerateLayoutCommand extends BaseCommand {
   // -----------------------------------------------------------------
   // Methods
   // -----------------------------------------------------------------
@@ -25,7 +25,7 @@ export class GenerateLayoutCommad extends BaseCommand {
    * @async
    * @method execute
    * @public
-   * @memberof generateLayoutCommad
+   * @memberof generateLayoutCommand
    *
    * @param {Uri} folderPath - The folder path
    */

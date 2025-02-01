@@ -2,7 +2,7 @@ import { Uri } from 'vscode';
 import { BaseCommand } from './base.command';
 
 /**
- * The GenerateRouterCommad class.
+ * The GenerateRouterCommand class.
  *
  * @class
  * @classdesc The class that represents the generate router command.
@@ -10,9 +10,9 @@ import { BaseCommand } from './base.command';
  * @export
  * @public
  * @example
- * const command = new GenerateRouterCommad(config);
+ * const command = new GenerateRouterCommand(config);
  */
-export class GenerateRouterCommad extends BaseCommand {
+export class GenerateRouterCommand extends BaseCommand {
   // -----------------------------------------------------------------
   // Methods
   // -----------------------------------------------------------------
@@ -25,7 +25,7 @@ export class GenerateRouterCommad extends BaseCommand {
    * @async
    * @method execute
    * @public
-   * @memberof generateRouterCommad
+   * @memberof generateRouterCommand
    *
    * @param {Uri} folderPath - The folder path
    */
