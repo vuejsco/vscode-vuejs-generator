@@ -156,7 +156,7 @@ export class ExtensionConfig {
    * console.log(config.repository);
    * @default ''
    */
-  maintainer: string;
+  maintainers: string;
 
   // -----------------------------------------------------------------
   // Constructor
@@ -198,8 +198,8 @@ export class ExtensionConfig {
     );
     this.author = config.get<string>('project.author', DEFAULT_AUTHOR);
     this.owner = config.get<string>('project.owner', DEFAULT_OWNER);
-    this.maintainer = config.get<string>(
-      'project.maintainer',
+    this.maintainers = config.get<string>(
+      'project.maintainers',
       DEFAULT_MAINTAINER,
     );
   }
@@ -248,6 +248,6 @@ export class ExtensionConfig {
     );
     this.author = config.get<string>('project.author', this.author);
     this.owner = config.get<string>('project.owner', this.owner);
-    this.maintainer = config.get<string>('project.maintainer', this.maintainer);
+    this.maintainers = config.get<string>('project.maintainers', this.maintainers);
   }
 }

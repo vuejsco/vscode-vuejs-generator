@@ -110,7 +110,7 @@ The extension provides predefined templates for various Vue.js file types, makin
          ],
          "vuejs.generator.project.author": "Manuel Gil",
          "vuejs.generator.project.owner": "Vue JS Colombia",
-         "vuejs.generator.project.maintainer": "VueJS Team"
+         "vuejs.generator.project.maintainers": "VueJS Team"
     }
     ```
 
@@ -128,29 +128,43 @@ You can customize **VueJS File Generator** by modifying its settings in `.vscode
 - `vuejs.generator.templates.customComponents`: Define custom component templates. Each template should include a `name`, `description`, `type`, and `template`.
 - `vuejs.generator.project.author`: Set the author name for the project.
 - `vuejs.generator.project.owner`: Set the owner name for the project.
-- `vuejs.generator.project.maintainer`: Set the maintainer name for the project.
+- `vuejs.generator.project.maintainers`: Set the maintainers name for the project.
 
 The following variables can be used in the template:
 
-| Variable                | Description |
-|-------------------------|-------------|
-| `fileName`              | The unmodified file name. Example: `"MyComponent"` |
-| `fileNameWithExt`       | The file name with its extension. Example: `"MyComponent.vue"` |
-| `fileExt`               | The file extension. Example: `"vue"` |
-| `fileNameCamelCase`     | The file name in **camelCase**. Example: `"myComponent"` |
-| `fileNamePascalCase`    | The file name in **PascalCase** (used for class and component names). Example: `"MyComponent"` |
-| `fileNameKebabCase`     | The file name in **kebab-case** (commonly used for filenames and CSS classes). Example: `"my-component"` |
-| `fileNameSnakeCase`     | The file name in **snake_case**. Example: `"my_component"` |
-| `fileNameConstantCase`  | The file name in **CONSTANT_CASE** (used for constants in JavaScript/TypeScript). Example: `"MY_COMPONENT"` |
-| `fileNameDotCase`       | The file name in **dot.case** (used in namespaces). Example: `"my.component"` |
-| `fileNamePathCase`      | The file name in **path/case** (similar to file paths). Example: `"my/component"` |
-| `fileNameSentenceCase`  | The file name in **Sentence case** (capitalizing only the first word). Example: `"My component"` |
-| `fileNameLowerCase`     | The file name in **lowercase**. Example: `"my component"` |
-| `fileNameTitleCase`     | The file name in **Title Case** (capitalizing each word). Example: `"My Component"` |
-| `date`                  | The current date in `YYYY-MM-DD` format. Example: `"2025-01-28"` |
-| `author`                | The author set in `project.author`. Example: `"Manuel Gil"` |
-| `owner`                 | The owner set in `project.owner`. Example: `"Vue JS Colombia"` |
-| `maintainer`           | The maintainers set in `project.maintainer`. Example: `"VueJS Team"` |
+| Variable                          | Description |
+|----------------------------------|-------------|
+| `fileName`                       | The unmodified file name. Example: `"MyComponent"` |
+| `fileNameWithExtention`          | The file name with its extension. Example: `"MyComponent.vue"` |
+| `fileExtension`                   | The file extension. Example: `"vue"` |
+| `fileNameCamelCase`              | The file name in **camelCase**. Example: `"myComponent"` |
+| `fileNamePascalCase`             | The file name in **PascalCase**. Example: `"MyComponent"` |
+| `fileNameKebabCase`              | The file name in **kebab-case**. Example: `"my-component"` |
+| `fileNameSnakeCase`              | The file name in **snake_case**. Example: `"my_component"` |
+| `fileNameConstantCase`           | The file name in **CONSTANT_CASE**. Example: `"MY_COMPONENT"` |
+| `fileNameDotCase`                | The file name in **dot.case**. Example: `"my.component"` |
+| `fileNamePathCase`               | The file name in **path/case**. Example: `"my/component"` |
+| `fileNameSentenceCase`           | The file name in **Sentence case**. Example: `"My component"` |
+| `fileNameLowerCase`              | The file name in **lowercase**. Example: `"my component"` |
+| `fileNameTitleCase`              | The file name in **Title Case**. Example: `"My Component"` |
+| `fileNamePluralCase`             | The plural form of the file name. Example: `"MyComponents"` |
+| `fileNameSingularCase`           | The singular form of the file name. Example: `"MyComponent"` |
+| `folderName`                     | The name of the folder where the file is created. |
+| `date`                           | The current date in `YYYY-MM-DD` format. Example: `"2025-01-28"` |
+| `year`                           | The current year. Example: `"2025"` |
+| `time`                           | The current time in local format. Example: `"14:35:20"` |
+| `timestamp`                      | The current timestamp in milliseconds. Example: `"1706402120000"` |
+| `timestampISO`                   | The current timestamp in ISO format. Example: `"2025-01-28T14:35:20.000Z"` |
+| `timestampUTC`                   | The current timestamp in UTC format. Example: `"Tue, 28 Jan 2025 14:35:20 GMT"` |
+| `timestampLocale`                 | The current timestamp in locale string format. Example: `"1/28/2025, 2:35:20 PM"` |
+| `timestampDate`                   | The current timestamp in date string format. Example: `"Tue Jan 28 2025"` |
+| `timestampTime`                   | The current timestamp in time string format. Example: `"14:35:20 GMT+0000 (Coordinated Universal Time)"` |
+| `timestampLocaleDate`             | The current timestamp in locale date string format. Example: `"1/28/2025"` |
+| `author`                         | The author set in `project.author`. Example: `"Manuel Gil"` |
+| `owner`                          | The owner set in `project.owner`. Example: `"Vue JS Colombia"` |
+| `maintainers`                     | The maintainers set in `project.maintainers`. Example: `"VueJS Team"` |
+| `license`                         | The license set in `project.license`. Example: `"MIT"` |
+| `version`                         | The project version set in `project.version`. Example: `"1.0.0"` |
 
 ## Community
 
