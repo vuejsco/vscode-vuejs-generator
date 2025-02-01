@@ -249,3 +249,27 @@ export const DEFAULT_OWNER: string = '';
  * @returns {string} - The default maintainer of the extension
  */
 export const DEFAULT_MAINTAINER: string = '';
+
+/**
+ * DEFAULT_LICENSE: The default license of the extension.
+ * @type {string}
+ * @public
+ * @memberof Constants
+ * @example
+ * console.log(DEFAULT_LICENSE);
+ *
+ * @returns {string} - The default license of the extension
+ */
+export const DEFAULT_LICENSE: string = 'MIT';
+
+/**
+ * DEFAULT_VERSION: The default version of the extension.
+ * @type {string}
+ * @public
+ * @memberof Constants
+ * @example
+ * console.log(DEFAULT_VERSION);
+ *
+ * @returns {string} - The default version of the extension
+ */
+export const DEFAULT_VERSION: string = '1.0.0';

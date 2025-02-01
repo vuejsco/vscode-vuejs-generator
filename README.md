@@ -110,7 +110,9 @@ The extension provides predefined templates for various Vue.js file types, makin
          ],
          "vuejs.generator.project.author": "Manuel Gil",
          "vuejs.generator.project.owner": "Vue JS Colombia",
-         "vuejs.generator.project.maintainers": "VueJS Team"
+         "vuejs.generator.project.maintainers": "VueJS Team",
+         "vuejs.generator.project.license": "MIT",
+         "vuejs.generator.project.version": "1.0.0"
     }
     ```
 
@@ -129,6 +131,8 @@ You can customize **VueJS File Generator** by modifying its settings in `.vscode
 - `vuejs.generator.project.author`: Set the author name for the project.
 - `vuejs.generator.project.owner`: Set the owner name for the project.
 - `vuejs.generator.project.maintainers`: Set the maintainers name for the project.
+- `vuejs.generator.project.license`: Set the license for the project.
+- `vuejs.generator.project.version`: Set the version for the project.
 
 The following variables can be used in the template:
 

@@ -488,7 +488,7 @@ export class FileGeneratorService {
     componentName: string,
     fileExtension: string,
   ): Record<string, any> {
-    const { author, owner, maintainers } = this.config;
+    const { author, owner, maintainers, license, version } = this.config;
 
     return {
       fileName: componentName,
@@ -520,8 +520,8 @@ export class FileGeneratorService {
       author,
       owner,
       maintainers,
-      // license,
-      // version,
+      license,
+      version,
     };
   }
 
