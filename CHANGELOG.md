@@ -1,5 +1,10 @@
 # Changelog
 
+## <small>1.2.1 (2025-02-01)</small>
+
+* chore: :bookmark: restore and update README documentation for command execution flow ([85f3a66](https://github.com/vuejsco/vscode-vuejs-generator/commit/85f3a66))
+* fix: :bug: correct class and method names in command files for consistency ([2360f7f](https://github.com/vuejsco/vscode-vuejs-generator/commit/2360f7f))
+
 ## 1.2.0 (2025-02-01)
 
 * feat: :sparkles: add license and version fields to project configuration and update related document ([dc75f76](https://github.com/vuejsco/vscode-vuejs-generator/commit/dc75f76))
