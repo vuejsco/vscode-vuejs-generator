@@ -126,5 +126,17 @@
 		"default": "",
 		"scope": "resource",
 		"description": "Maintainer"
+	},
+	"vuejs.generator.project.license": {
+		"type": "string",
+		"default": "MIT",
+		"scope": "resource",
+		"description": "License"
+	},
+	"vuejs.generator.project.version": {
+		"type": "string",
+		"default": "1.0.0",
+		"scope": "resource",
+		"description": "Version"
 	}
 }

@@ -242,11 +242,23 @@
 					"scope": "resource",
 					"description": "%vuejs.generator.project.owner%"
 				},
-				"vuejs.generator.project.maintainer": {
+				"vuejs.generator.project.maintainers": {
 					"type": "string",
 					"default": "",
 					"scope": "resource",
-					"description": "%vuejs.generator.project.maintainer%"
+					"description": "%vuejs.generator.project.maintainers%"
+				},
+				"vuejs.generator.project.license": {
+					"type": "string",
+					"default": "MIT",
+					"scope": "resource",
+					"description": "%vuejs.generator.project.license%"
+				},
+				"vuejs.generator.project.version": {
+					"type": "string",
+					"default": "1.0.0",
+					"scope": "resource",
+					"description": "%vuejs.generator.project.version%"
 				}
 			}
 		},

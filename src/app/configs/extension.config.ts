@@ -9,9 +9,11 @@ import {
   DEFAULT_EXCLUDE_SEMI_COLON_AT_END_OF_LINE,
   DEFAULT_HEADER_COMMENT_TEMPLATE,
   DEFAULT_INSERT_FINAL_NEWLINE,
+  DEFAULT_LICENSE,
   DEFAULT_MAINTAINER,
   DEFAULT_OWNER,
   DEFAULT_SKIP_FOLDER_CONFIRMATION,
+  DEFAULT_VERSION,
 } from './constants.config';
 
 /**
@@ -156,7 +158,31 @@ export class ExtensionConfig {
    * console.log(config.repository);
    * @default ''
    */
-  maintainer: string;
+  maintainers: string;
+
+  /**
+   * The license.
+   * @type {string}
+   * @public
+   * @memberof ExtensionConfig
+   * @example
+   * const config = new ExtensionConfig(workspace.getConfiguration());
+   * console.log(config.license);
+   * @default ''
+   */
+  license: string;
+
+  /**
+   * The version.
+   * @type {string}
+   * @public
+   * @memberof ExtensionConfig
+   * @example
+   * const config = new ExtensionConfig(workspace.getConfiguration());
+   * console.log(config.version);
+   * @default ''
+   */
+  version: string;
 
   // -----------------------------------------------------------------
   // Constructor
@@ -198,10 +224,12 @@ export class ExtensionConfig {
     );
     this.author = config.get<string>('project.author', DEFAULT_AUTHOR);
     this.owner = config.get<string>('project.owner', DEFAULT_OWNER);
-    this.maintainer = config.get<string>(
-      'project.maintainer',
+    this.maintainers = config.get<string>(
+      'project.maintainers',
       DEFAULT_MAINTAINER,
     );
+    this.license = config.get<string>('project.license', DEFAULT_LICENSE);
+    this.version = config.get<string>('project.version', DEFAULT_VERSION);
   }
 
   // -----------------------------------------------------------------
@@ -248,6 +276,11 @@ export class ExtensionConfig {
     );
     this.author = config.get<string>('project.author', this.author);
     this.owner = config.get<string>('project.owner', this.owner);
-    this.maintainer = config.get<string>('project.maintainer', this.maintainer);
+    this.maintainers = config.get<string>(
+      'project.maintainers',
+      this.maintainers,
+    );
+    this.license = config.get<string>('project.license', this.license);
+    this.version = config.get<string>('project.version', this.version);
   }
 }

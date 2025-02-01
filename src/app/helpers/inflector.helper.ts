@@ -1,5 +1,3 @@
-import * as vscode from 'vscode';
-
 /**
  * Changes a string of words separated by spaces or underscores to camel case.
  *
@@ -14,7 +12,11 @@ export const camelize = (str: string): string => {
     .replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
       index === 0 ? word.toLowerCase() : word.toUpperCase(),
     )
-    .replace(/\s+/g, '');
+    .replace(/\s+/g, '')
+    .replace(/-+/g, '')
+    .replace(/_+/g, '')
+    .replace(/\.+/g, '')
+    .replace(/\/+/g, '');
 };
 
 /**
@@ -29,7 +31,11 @@ export const camelize = (str: string): string => {
 export const pascalize = (str: string): string => {
   return str
     .replace(/(?:^\w|[A-Z]|\b\w)/g, (word) => word.toUpperCase())
-    .replace(/\s+/g, '');
+    .replace(/\s+/g, '')
+    .replace(/-+/g, '')
+    .replace(/_+/g, '')
+    .replace(/\.+/g, '')
+    .replace(/\/+/g, '');
 };
 
 /**
@@ -42,7 +48,12 @@ export const pascalize = (str: string): string => {
  * @returns {string} - The kebabized string
  */
 export const kebabize = (str: string): string => {
-  return str.replace(/\s+/g, '-').toLowerCase();
+  return str
+    .replace(/\s+/g, '-')
+    .replace(/_+/g, '-')
+    .replace(/\.+/g, '-')
+    .replace(/\/+/g, '-')
+    .toLowerCase();
 };
 
 /**
@@ -55,7 +66,12 @@ export const kebabize = (str: string): string => {
  * @returns {string} - The snakeized string
  */
 export const snakeize = (str: string): string => {
-  return str.replace(/\s+/g, '_').toLowerCase();
+  return str
+    .replace(/\s+/g, '_')
+    .replace(/-+/g, '_')
+    .replace(/\.+/g, '_')
+    .replace(/\/+/g, '_')
+    .toLowerCase();
 };
 
 /**
@@ -68,7 +84,12 @@ export const snakeize = (str: string): string => {
  * @returns {string} - The constantized string
  */
 export const constantize = (str: string): string => {
-  return str.replace(/\s+/g, '_').toUpperCase();
+  return str
+    .replace(/\s+/g, '_')
+    .replace(/-+/g, '_')
+    .replace(/\.+/g, '_')
+    .replace(/\/+/g, '_')
+    .toUpperCase();
 };
 
 /**
@@ -98,4 +119,42 @@ export const titleize = (str: string): string => {
  */
 export const sentenceCase = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+};
+
+/**
+ * Changes a string to its plural form.
+ *
+ * @param {string} str - The string to pluralize
+ * @example
+ * pluralize('foo');
+ *
+ * @returns {string} - The pluralized string
+ */
+export const pluralize = (str: string): string => {
+  if (str.endsWith('y')) {
+    return str.slice(0, -1) + 'ies';
+  }
+  if (str.endsWith('s')) {
+    return str;
+  }
+  return str + 's';
+};
+
+/**
+ * Changes a string to its singular form.
+ *
+ * @param {string} str - The string to singularize
+ * @example
+ * singularize('foos');
+ *
+ * @returns {string} - The singularized string
+ */
+export const singularize = (str: string): string => {
+  if (str.endsWith('ies')) {
+    return str.slice(0, -3) + 'y';
+  }
+  if (str.endsWith('s')) {
+    return str.slice(0, -1);
+  }
+  return str;
 };
