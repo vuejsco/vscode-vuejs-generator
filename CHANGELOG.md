@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 (2025-02-01)
+
+* feat: :sparkles: add license and version fields to project configuration and update related document ([dc75f76](https://github.com/vuejsco/vscode-vuejs-generator/commit/dc75f76))
+* fix: :bug: correct maintainer field in README and update variable descriptions ([e5ec166](https://github.com/vuejsco/vscode-vuejs-generator/commit/e5ec166))
+
 ## 1.1.0 (2025-01-30)
 
 * feat: :construction: add template files for various TypeScript and Vue components ([7cea777](https://github.com/vuejsco/vscode-vuejs-generator/commit/7cea777))
