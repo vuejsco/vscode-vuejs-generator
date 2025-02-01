@@ -7,19 +7,24 @@
 [![GitHub Repo stars](https://img.shields.io/github/stars/vuejsco/vscode-vuejs-generator?style=for-the-badge&logo=github)](https://github.com/vuejsco/vscode-vuejs-generator)
 [![GitHub license](https://img.shields.io/github/license/vuejsco/vscode-vuejs-generator?style=for-the-badge&logo=github)](https://github.com/vuejsco/vscode-vuejs-generator/blob/main/LICENSE)
 
-**VueJS File Generator** is a Visual Studio Code extension designed to streamline the creation of Vue.js files. It generates boilerplate code based on customizable templates, allowing you to quickly create components, services, and other project files according to your needs.
+**VueJS File Generator** is a Visual Studio Code extension designed to simplify the creation of Vue.js files. It generates boilerplate code from customizable templates, enabling you to quickly create components, services, and other project files according to your needs.
 
 [![VueJS File Generator](https://raw.githubusercontent.com/vuejsco/vscode-vuejs-generator/main/images/demo.gif)](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-vuejs-generator)
 
-## Table of Contents
+## Index
 
 - [VueJS File Generator](#vuejs-file-generator)
-  - [Table of Contents](#table-of-contents)
+  - [Index](#index)
   - [Key Features](#key-features)
   - [Supported File Templates](#supported-file-templates)
   - [Requirements](#requirements)
+  - [Requirements](#requirements-1)
   - [Setup](#setup)
+    - [Step 1: Open Command Palette in VS Code](#step-1-open-command-palette-in-vs-code)
+    - [Step 2: Add Configuration to `settings.json`](#step-2-add-configuration-to-settingsjson)
+    - [Step 3: Restart VS Code](#step-3-restart-vs-code)
   - [Configuration](#configuration)
+  - [Variables Table](#variables-table)
   - [Community](#community)
   - [Contributing](#contributing)
   - [Code of Conduct](#code-of-conduct)
@@ -29,29 +34,33 @@
 ## Key Features
 
 - **Customizable Templates**: Define TypeScript and Vue.js file templates tailored to your project.
-- **Project-Level Configuration**: Set up file formatting, naming conventions, and more.
-- **Open Source**: Contribute and benefit from the community-driven development.
+- **Project-Level Configuration**: Configure file formatting, naming conventions, and more.
+- **Open Source**: Contribute to and benefit from community-driven development.
 
 ## Supported File Templates
 
 The extension provides predefined templates for various Vue.js file types, making it easy to generate structured and consistent files for your project.
 
 | File Type    | Description | Example Filename |
-|-------------|-------------|------------------|
-| `component`               | Vue.js Component (Single File Component) | `MyComponent.vue` |
-| `page`                    | Vue.js Page (Common in frameworks like Nuxt) | `HomePage.vue` |
-| `store`                   | Pinia Store Module | `useAuthStore.ts` |
-| `composable`              | Vue 3 Composable (Reusable function) | `useFetch.ts` |
-| `directive`               | Vue Directive | `v-focus.ts` |
-| `middleware`              | Middleware for Nuxt.js | `auth.ts` |
-| `model`                   | TypeScript Model (Interface or Type) | `UserModel.ts` |
-| `layout`                  | Layout Component (Nuxt.js) | `DefaultLayout.vue` |
-| `service`                 | API Service (For Axios or Fetch wrappers) | `AuthService.ts` |
-| `test`                    | Unit Test File (Jest/Vitest) | `MyComponent.spec.ts` |
-| `enum`                    | TypeScript Enum | `UserRoles.ts` |
-| `constant`                | Constants File | `constants.ts` |
-| `hook`                    | Custom React Hook | `useAuth.ts` |
-| `route`                   | Route Configuration File | `routes.ts` |
+|--------------|-------------|------------------|
+| `component`  | Vue.js Component (Single File Component) | `MyComponent.vue` |
+| `page`       | Vue.js Page (Common in frameworks like Nuxt) | `HomePage.vue` |
+| `store`      | Pinia Store Module | `useAuthStore.ts` |
+| `composable` | Vue 3 Composable (Reusable function) | `useFetch.ts` |
+| `directive`  | Vue Directive | `v-focus.ts` |
+| `middleware` | Middleware for Nuxt.js | `auth.ts` |
+| `model`      | TypeScript Model (Interface or Type) | `UserModel.ts` |
+| `layout`     | Layout Component (Nuxt.js) | `DefaultLayout.vue` |
+| `service`    | API Service (For Axios or Fetch wrappers) | `AuthService.ts` |
+| `test`       | Unit Test File (Jest/Vitest) | `MyComponent.spec.ts` |
+| `enum`       | TypeScript Enum | `UserRoles.ts` |
+| `constant`   | Constants File | `constants.ts` |
+| `hook`       | Custom React Hook | `useAuth.ts` |
+| `route`      | Route Configuration File | `routes.ts` |
+
+## Requirements
+
+- **VS Code 1.88.0** or higher.
 
 ## Requirements
 
@@ -59,68 +68,73 @@ The extension provides predefined templates for various Vue.js file types, makin
 
 ## Setup
 
-1. **Open the VS Code Command Palette**:
-   - Windows: `CTRL + SHIFT + P`
-   - MacOS: `CMD + SHIFT + P`
+### Step 1: Open Command Palette in VS Code
 
-2. **Open Workspace Settings**:
+1. Open the **Command Palette** in VS Code:
+   - Windows: `CTRL + SHIFT + P`
+   - macOS: `CMD + SHIFT + P`
+
+2. Open the **Workspace Settings**:
    - Type `Preferences: Open Workspace Settings (JSON)`.
 
-3. **Add Configuration to `settings.json`**:
-   Copy the following settings into your `.vscode/settings.json` file:
+### Step 2: Add Configuration to `settings.json`
 
-    ```json
-    {
-         "vuejs.generator.enable": true,
-         "vuejs.generator.files.skipFolderConfirmation": false,
-         "vuejs.generator.formatting.excludeSemiColonAtEndOfLine": false,
-         "vuejs.generator.formatting.endOfLine": "lf",
-         "vuejs.generator.formatting.insertFinalNewline": true,
-         "vuejs.generator.templates.customComponents": [
-            {
-               "name": "Vue Component",
-               "description": "The Vue component",
-               "type": "vue",
-               "template": [
-                  "<template>",
-                  "  <div id=\"{{fileName}}\">",
-                  "    <!-- Your code here -->",
-                  "  </div>",
-                  "</template>",
-                  "",
-                  "<script lang=\"ts\">",
-                  "import { defineComponent } from \"vue\";",
-                  "",
-                  "export default defineComponent({",
-                  "  name: \"{{fileName}}\",",
-                  "  props: {",
-                  "    // Your props here",
-                  "  },",
-                  "  setup() {",
-                  "    // Your code here",
-                  "  }",
-                  "});",
-                  "</script>",
-                  "",
-                  "<style scoped>",
-                  "/* Your styles here */",
-                  "</style>"
-               ]
-            }
-         ],
-         "vuejs.generator.project.author": "Manuel Gil",
-         "vuejs.generator.project.owner": "Vue JS Colombia",
-         "vuejs.generator.project.maintainers": "VueJS Team",
-         "vuejs.generator.project.license": "MIT",
-         "vuejs.generator.project.version": "1.0.0"
-    }
-    ```
+Copy the following configuration into your `.vscode/settings.json` file:
 
-4. **Restart VS Code** to apply the settings.
+```json
+{
+    "vuejs.generator.enable": true,
+    "vuejs.generator.files.skipFolderConfirmation": false,
+    "vuejs.generator.formatting.excludeSemiColonAtEndOfLine": false,
+    "vuejs.generator.formatting.endOfLine": "lf",
+    "vuejs.generator.formatting.insertFinalNewline": true,
+    "vuejs.generator.templates.customComponents": [
+        {
+            "name": "Vue Component",
+            "description": "Vue component template",
+            "type": "vue",
+            "template": [
+                "<template>",
+                "  <div id=\"{{fileName}}\">",
+                "    <!-- Your code here -->",
+                "  </div>",
+                "</template>",
+                "",
+                "<script lang=\"ts\">",
+                "import { defineComponent } from \"vue\";",
+                "",
+                "export default defineComponent({",
+                "  name: \"{{fileName}}\",",
+                "  props: {",
+                "    // Your props here",
+                "  },",
+                "  setup() {",
+                "    // Your code here",
+                "  }",
+                "});",
+                "</script>",
+                "",
+                "<style scoped>",
+                "/* Your styles here */",
+                "</style>"
+            ]
+        }
+    ],
+    "vuejs.generator.project.author": "Manuel Gil",
+    "vuejs.generator.project.owner": "Vue JS Colombia",
+    "vuejs.generator.project.maintainers": "VueJS Team",
+    "vuejs.generator.project.license": "MIT",
+    "vuejs.generator.project.version": "1.0.0"
+}
+```
+
+### Step 3: Restart VS Code
+
+Restart VS Code to apply the settings.
 
 ## Configuration
 
-You can customize **VueJS File Generator** by modifying its settings in `.vscode/settings.json`:
+You can customize **VueJS File Generator** by modifying its settings in `.vscode/settings.json`. Some of the available settings are:
 
 - `vuejs.generator.enable`: Enable or disable the extension (default: `true`).
 - `vuejs.generator.files.skipFolderConfirmation`: Skip folder selection when creating files (default: `false`).
@@ -133,6 +147,12 @@ You can customize **VueJS File Generator** by modifying its settings in `.vscode
 - `vuejs.generator.project.maintainers`: Set the maintainers name for the project.
 - `vuejs.generator.project.license`: Set the license for the project.
 - `vuejs.generator.project.version`: Set the version for the project.
+
+The following variables can be used in the template:
+
+For the full list of customizable variables in the template, check the [Variables Table](#variables-table).
+
+## Variables Table
 
 The following variables can be used in the template:
 
@@ -179,12 +199,12 @@ This extension is maintained by the **Vue JS Colombia Meetup Community**. Stay u
 
 ## Contributing
 
-We welcome community contributions! To get started:
+We welcome contributions from the community! To get started:
 
 1. Fork the [GitHub repository](https://github.com/vuejsco/vscode-vuejs-generator).
 2. Make your changes and submit a pull request.
 
-For guidelines, refer to the [Contribution Guide](./CONTRIBUTING.md).
+For contribution guidelines, refer to the [Contribution Guide](./CONTRIBUTING.md).
 
 ## Code of Conduct
 

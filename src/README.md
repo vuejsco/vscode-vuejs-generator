@@ -37,42 +37,60 @@ Below is the folder structure for reference:
 
 ```plaintext
 . 📦 vscode-vuejs-generator
-├── 📂 src/
-│  ├── 📂 app/
-│  │  ├── 📂 commands/
-│  │  │  ├── base.command.ts
-│  │  │  ├── generate-component.command.ts
-│  │  │  ├── generate-composable.command.ts
-│  │  │  ├── generate-custom-component.command.ts
-│  │  │  ├── generate-directive.command.ts
-│  │  │  ├── generate-router.command.ts
-│  │  │  ├── generate-store.command.ts
-│  │  │  └── index.ts
-│  │  ├── 📂 configs/
-│  │  │  ├── constants.config.ts
-│  │  │  ├── extension.config.ts
-│  │  │  └── index.ts
-│  │  ├── 📂 controllers/
-│  │  │  ├── command-invoker.controller.ts
-│  │  │  └── index.ts
-│  │  ├── 📂 helpers/
-│  │  │  ├── index.ts
-│  │  │  └── inflector.helper.ts
-│  │  ├── 📂 services/
-│  │  │  ├── file-generator.service.ts
-│  │  │  └── index.ts
-│  │  └── 📂 types/
-│  │     ├── command.type.ts
-│  │     └── index.ts
-│  └── extension.ts
-├── 📂 templates/
-│  ├── component.json
-│  ├── composable.json
-│  ├── directive.json
-│  ├── router.json
-│  ├── service.json
-│  └── store.json
+. 📂 src
+├── 📂 app/
+|  ├── 📂 commands/
+|  |  ├── 📄 base.command.ts
+|  |  ├── 📄 generate-component.command.ts
+|  |  ├── 📄 generate-composable.command.ts
+|  |  ├── 📄 generate-constant.command.ts
+|  |  ├── 📄 generate-custom-component.command.ts
+|  |  ├── 📄 generate-directive.command.ts
+|  |  ├── 📄 generate-enum.command.ts
+|  |  ├── 📄 generate-hook.command.ts
+|  |  ├── 📄 generate-layout.command.ts
+|  |  ├── 📄 generate-middleware.command.ts
+|  |  ├── 📄 generate-model.command.ts
+|  |  ├── 📄 generate-page.command.ts
+|  |  ├── 📄 generate-router.command.ts
+|  |  ├── 📄 generate-service.command.ts
+|  |  ├── 📄 generate-store.command.ts
+|  |  ├── 📄 generate-test.command.ts
+|  |  └── 📄 index.ts
+|  ├── 📂 configs/
+|  |  ├── 📄 constants.config.ts
+|  |  ├── 📄 extension.config.ts
+|  |  └── 📄 index.ts
+|  ├── 📂 controllers/
+|  |  ├── 📄 command-invoker.controller.ts
+|  |  └── 📄 index.ts
+|  ├── 📂 helpers/
+|  |  ├── 📄 index.ts
+|  |  └── 📄 inflector.helper.ts
+|  ├── 📂 services/
+|  |  ├── 📄 file-generator.service.ts
+|  |  └── 📄 index.ts
+|  └── 📂 types/
+|     ├── 📄 command.type.ts
+|     └── 📄 index.ts
+├── 📄 extension.ts
+└── 📂 templates/
+   ├── 📄 component.json
+   ├── 📄 composable.json
+   ├── 📄 constant.json
+   ├── 📄 directive.json
+   ├── 📄 enum.json
+   ├── 📄 hook.json
+   ├── 📄 layout.json
+   ├── 📄 middleware.json
+   ├── 📄 model.json
+   ├── 📄 page.json
+   ├── 📄 router.json
+   ├── 📄 service.json
+   ├── 📄 store.json
+   └── 📄 test.json
 ```
+
 
 ## Key Components & Responsibilities
 
