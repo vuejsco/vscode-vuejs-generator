@@ -2,7 +2,7 @@ import { Uri } from 'vscode';
 import { BaseCommand } from './base.command';
 
 /**
- * The GenerateHookCommad class.
+ * The GenerateHookCommand class.
  *
  * @class
  * @classdesc The class that represents the generate hook command.
@@ -10,9 +10,9 @@ import { BaseCommand } from './base.command';
  * @export
  * @public
  * @example
- * const command = new GenerateHookCommad(config);
+ * const command = new GenerateHookCommand(config);
  */
-export class GenerateHookCommad extends BaseCommand {
+export class GenerateHookCommand extends BaseCommand {
   // -----------------------------------------------------------------
   // Methods
   // -----------------------------------------------------------------
@@ -25,7 +25,7 @@ export class GenerateHookCommad extends BaseCommand {
    * @async
    * @method execute
    * @public
-   * @memberof generateHookCommad
+   * @memberof generateHookCommand
    *
    * @param {Uri} folderPath - The folder path
    */

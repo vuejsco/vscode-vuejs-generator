@@ -2,7 +2,7 @@ import { Uri } from 'vscode';
 import { BaseCommand } from './base.command';
 
 /**
- * The GenerateMiddlewareCommad class.
+ * The GenerateMiddlewareCommand class.
  *
  * @class
  * @classdesc The class that represents the generate middleware command.
@@ -10,9 +10,9 @@ import { BaseCommand } from './base.command';
  * @export
  * @public
  * @example
- * const command = new GenerateMiddlewareCommad(config);
+ * const command = new GenerateMiddlewareCommand(config);
  */
-export class GenerateMiddlewareCommad extends BaseCommand {
+export class GenerateMiddlewareCommand extends BaseCommand {
   // -----------------------------------------------------------------
   // Methods
   // -----------------------------------------------------------------
@@ -25,7 +25,7 @@ export class GenerateMiddlewareCommad extends BaseCommand {
    * @async
    * @method execute
    * @public
-   * @memberof generateMiddlewareCommad
+   * @memberof generateMiddlewareCommand
    *
    * @param {Uri} folderPath - The folder path
    */

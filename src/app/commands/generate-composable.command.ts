@@ -25,7 +25,7 @@ export class GenerateComposableCommand extends BaseCommand {
    * @async
    * @method execute
    * @public
-   * @memberof generateComposeableCommad
+   * @memberof generateComposeableCommand
    *
    * @param {Uri} folderPath - The folder path
    */

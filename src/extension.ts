@@ -3,12 +3,12 @@
 import * as vscode from 'vscode';
 
 import {
-  GenerateComponentCommad,
+  GenerateComponentCommand,
   GenerateComposableCommand,
-  GenerateCustomComponentCommad,
+  GenerateCustomComponentCommand,
   GenerateDirectiveCommand,
-  GeneratePageCommad,
-  GenerateRouterCommad,
+  GeneratePageCommand,
+  GenerateRouterCommand,
   GenerateStoreCommand,
 } from './app/commands';
 import {
@@ -162,15 +162,15 @@ export async function activate(context: vscode.ExtensionContext) {
   const commands = [
     {
       name: 'generateCustomComponent',
-      handler: new GenerateCustomComponentCommad(config, context.extensionUri),
+      handler: new GenerateCustomComponentCommand(config, context.extensionUri),
     },
     {
       name: 'generateComponent',
-      handler: new GenerateComponentCommad(config, context.extensionUri),
+      handler: new GenerateComponentCommand(config, context.extensionUri),
     },
     {
       name: 'generatePage',
-      handler: new GeneratePageCommad(config, context.extensionUri),
+      handler: new GeneratePageCommand(config, context.extensionUri),
     },
     {
       name: 'generateStore',
@@ -178,7 +178,7 @@ export async function activate(context: vscode.ExtensionContext) {
     },
     {
       name: 'generateRouter',
-      handler: new GenerateRouterCommad(config, context.extensionUri),
+      handler: new GenerateRouterCommand(config, context.extensionUri),
     },
     {
       name: 'generateComposable',

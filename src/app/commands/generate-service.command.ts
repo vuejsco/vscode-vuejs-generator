@@ -2,7 +2,7 @@ import { Uri } from 'vscode';
 import { BaseCommand } from './base.command';
 
 /**
- * The GenerateServiceCommad class.
+ * The GenerateServiceCommand class.
  *
  * @class
  * @classdesc The class that represents the generate service command.
@@ -10,9 +10,9 @@ import { BaseCommand } from './base.command';
  * @export
  * @public
  * @example
- * const command = new GenerateServiceCommad(config);
+ * const command = new GenerateServiceCommand(config);
  */
-export class GenerateServiceCommad extends BaseCommand {
+export class GenerateServiceCommand extends BaseCommand {
   // -----------------------------------------------------------------
   // Methods
   // -----------------------------------------------------------------
@@ -25,7 +25,7 @@ export class GenerateServiceCommad extends BaseCommand {
    * @async
    * @method execute
    * @public
-   * @memberof generateServiceCommad
+   * @memberof generateServiceCommand
    *
    * @param {Uri} folderPath - The folder path
    */

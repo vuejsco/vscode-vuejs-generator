@@ -2,7 +2,7 @@ import { Uri } from 'vscode';
 import { BaseCommand } from './base.command';
 
 /**
- * The GenerateConstantCommad class.
+ * The GenerateConstantCommand class.
  *
  * @class
  * @classdesc The class that represents the generate constant command.
@@ -10,9 +10,9 @@ import { BaseCommand } from './base.command';
  * @export
  * @public
  * @example
- * const command = new GenerateConstantCommad(config);
+ * const command = new GenerateConstantCommand(config);
  */
-export class GenerateConstantCommad extends BaseCommand {
+export class GenerateConstantCommand extends BaseCommand {
   // -----------------------------------------------------------------
   // Methods
   // -----------------------------------------------------------------
@@ -25,7 +25,7 @@ export class GenerateConstantCommad extends BaseCommand {
    * @async
    * @method execute
    * @public
-   * @memberof generateConstantCommad
+   * @memberof generateConstantCommand
    *
    * @param {Uri} folderPath - The folder path
    */

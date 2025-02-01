@@ -2,7 +2,7 @@ import { Uri } from 'vscode';
 import { BaseCommand } from './base.command';
 
 /**
- * The GenerateTestCommad class.
+ * The GenerateTestCommand class.
  *
  * @class
  * @classdesc The class that represents the generate test command.
@@ -10,9 +10,9 @@ import { BaseCommand } from './base.command';
  * @export
  * @public
  * @example
- * const command = new GenerateTestCommad(config);
+ * const command = new GenerateTestCommand(config);
  */
-export class GenerateTestCommad extends BaseCommand {
+export class GenerateTestCommand extends BaseCommand {
   // -----------------------------------------------------------------
   // Methods
   // -----------------------------------------------------------------
@@ -25,7 +25,7 @@ export class GenerateTestCommad extends BaseCommand {
    * @async
    * @method execute
    * @public
-   * @memberof generateTestCommad
+   * @memberof generateTestCommand
    *
    * @param {Uri} folderPath - The folder path
    */

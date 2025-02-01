@@ -2,7 +2,7 @@ import { Uri } from 'vscode';
 import { BaseCommand } from './base.command';
 
 /**
- * The GenerateEnumCommad class.
+ * The GenerateEnumCommand class.
  *
  * @class
  * @classdesc The class that represents the generate enum command.
@@ -10,9 +10,9 @@ import { BaseCommand } from './base.command';
  * @export
  * @public
  * @example
- * const command = new GenerateEnumCommad(config);
+ * const command = new GenerateEnumCommand(config);
  */
-export class GenerateEnumCommad extends BaseCommand {
+export class GenerateEnumCommand extends BaseCommand {
   // -----------------------------------------------------------------
   // Methods
   // -----------------------------------------------------------------
@@ -25,7 +25,7 @@ export class GenerateEnumCommad extends BaseCommand {
    * @async
    * @method execute
    * @public
-   * @memberof generateEnumCommad
+   * @memberof generateEnumCommand
    *
    * @param {Uri} folderPath - The folder path
    */
