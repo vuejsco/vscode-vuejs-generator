@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0 (2025-03-10)
+
+* feat: :sparkles: enhance Spanish localization and add update notification for extension ([4c7056b](https://github.com/vuejsco/vscode-vuejs-generator/commit/4c7056b))
+
 ## <small>1.2.1 (2025-02-01)</small>
 
 * chore: :bookmark: restore and update README documentation for command execution flow ([85f3a66](https://github.com/vuejsco/vscode-vuejs-generator/commit/85f3a66))
