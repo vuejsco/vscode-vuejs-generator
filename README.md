@@ -18,7 +18,6 @@
   - [Key Features](#key-features)
   - [Supported File Templates](#supported-file-templates)
   - [Requirements](#requirements)
-  - [Requirements](#requirements-1)
   - [Setup](#setup)
     - [Step 1: Open Command Palette in VS Code](#step-1-open-command-palette-in-vs-code)
     - [Step 2: Add Configuration to `settings.json`](#step-2-add-configuration-to-settingsjson)
@@ -57,10 +56,6 @@ The extension provides predefined templates for various Vue.js file types, makin
 | `constant`   | Constants File | `constants.ts` |
 | `hook`       | Custom React Hook | `useAuth.ts` |
 | `route`      | Route Configuration File | `routes.ts` |
-
-## Requirements
-
-- **VS Code 1.88.0** or higher.
 
 ## Requirements
 
