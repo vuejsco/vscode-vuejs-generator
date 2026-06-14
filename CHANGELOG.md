@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.0 (2026-06-12)
+
+* feat: :sparkles: support batch file generation and improve creation feedback ([c8f7eab](https://github.com/vuejsco/vscode-vuejs-generator/commit/c8f7eab))
+* chore(tooling): :wrench: migrate project tooling to pnpm and improve automation ([7a115ae](https://github.com/vuejsco/vscode-vuejs-generator/commit/7a115ae))
+
 ## 1.3.0 (2025-03-10)
 
 * feat: :sparkles: enhance Spanish localization and add update notification for extension ([4c7056b](https://github.com/vuejsco/vscode-vuejs-generator/commit/4c7056b))
