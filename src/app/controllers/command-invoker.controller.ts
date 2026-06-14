@@ -76,7 +76,7 @@ export class CommandInvoker {
     if (!this.isEnable) {
       const message = l10n.t(
         '{0} is disabled in settings. Enable it to use its features',
-        [EXTENSION_DISPLAY_NAME],
+        EXTENSION_DISPLAY_NAME,
       );
       window.showErrorMessage(message);
       return;

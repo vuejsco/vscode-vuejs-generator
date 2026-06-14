@@ -33,6 +33,7 @@
 ## Key Features
 
 - **Customizable Templates**: Define TypeScript and Vue.js file templates tailored to your project.
+- **Batch File Generation**: Enter comma-separated names to create multiple files of the same type in one command run.
 - **Project-Level Configuration**: Configure file formatting, naming conventions, and more.
 - **Open Source**: Contribute to and benefit from community-driven development.
 

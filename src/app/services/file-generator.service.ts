@@ -1,18 +1,16 @@
 import {
-  access,
   existsSync,
   mkdirSync,
-  open,
   readFileSync,
   writeFile,
 } from 'fs';
 import * as mustache from 'mustache';
 import { dirname, join } from 'path';
 import {
-  Uri,
-  WorkspaceFolder,
   commands,
   l10n,
+  Uri,
+  WorkspaceFolder,
   window,
   workspace,
 } from 'vscode';
@@ -191,14 +189,23 @@ export class FileGeneratorService {
       folderName = relativeFolderPath;
     }
 
-    const componentFileName = await this.promptInput(
+    const rawFileNames = await this.promptInput(
+      l10n.t('Enter the {0} name', componentType),
       l10n.t(
-        'Enter the file name for the custom component. The file extension will be added automatically',
+        'Enter the {0} name, e.g. user, product, order, etc. Separate multiple names with commas',
+        componentType,
       ),
-      l10n.t('Enter the file name, e.g. User, Product, Order, etc.'),
     );
 
-    if (!componentFileName) {
+    if (!rawFileNames) {
+      const message = l10n.t('Operation cancelled!');
+      window.showInformationMessage(message);
+      return;
+    }
+
+    const fileNames = this.parseFileNames(rawFileNames);
+
+    if (fileNames.length === 0) {
       const message = l10n.t('Operation cancelled!');
       window.showInformationMessage(message);
       return;
@@ -216,16 +223,28 @@ export class FileGeneratorService {
     }
 
     const content = this.generateFileContent(template.template);
-
-    const fileContent = mustache.render(
-      content,
-      this.getVariables(folderName, componentFileName, template.type),
-    );
-
     const resolvedFolderPath = join(workspaceFolder.uri.fsPath, folderName);
-    const fileName = `${componentFileName}.${template.type}`;
+    const createdFiles: string[] = [];
 
-    this.saveFile(resolvedFolderPath, fileName, fileContent);
+    for (const componentFileName of fileNames) {
+      const fileContent = mustache.render(
+        content,
+        this.getVariables(folderName, componentFileName, template.type),
+      );
+      const fileName = `${componentFileName}.${template.type}`;
+      const created = await this.saveFile(
+        resolvedFolderPath,
+        fileName,
+        fileContent,
+        { openInEditor: false, notify: false },
+      );
+
+      if (created) {
+        createdFiles.push(join(resolvedFolderPath, fileName));
+      }
+    }
+
+    await this.finalizeFileCreation(createdFiles, fileNames.length);
   }
 
   /**
@@ -327,15 +346,25 @@ export class FileGeneratorService {
       return;
     }
 
-    const componentFileName = await this.promptInput(
+    const rawFileNames = await this.promptInput(
       l10n.t(
         'Enter the file name for the custom component. The file extension will be added automatically',
       ),
-      l10n.t('Enter the file name, e.g. User, Product, Order, etc.'),
+      l10n.t(
+        'Enter the file name, e.g. User, Product, Order, etc. Separate multiple names with commas',
+      ),
       undefined,
     );
 
-    if (!componentFileName) {
+    if (!rawFileNames) {
+      const message = l10n.t('Operation cancelled!');
+      window.showInformationMessage(message);
+      return;
+    }
+
+    const fileNames = this.parseFileNames(rawFileNames);
+
+    if (fileNames.length === 0) {
       const message = l10n.t('Operation cancelled!');
       window.showInformationMessage(message);
       return;
@@ -354,16 +383,104 @@ export class FileGeneratorService {
     }
 
     const content = this.generateFileContent(template.template);
-
-    const fileContent = mustache.render(
-      content,
-      this.getVariables(folderName, componentFileName, template.type),
-    );
-
     const resolvedFolderPath = join(workspaceFolder.uri.fsPath, folderName);
-    const fileName = `${componentFileName}.${template.type}`;
+    const createdFiles: string[] = [];
 
-    this.saveFile(resolvedFolderPath, fileName, fileContent);
+    for (const componentFileName of fileNames) {
+      const fileContent = mustache.render(
+        content,
+        this.getVariables(folderName, componentFileName, template.type),
+      );
+      const fileName = `${componentFileName}.${template.type}`;
+      const created = await this.saveFile(
+        resolvedFolderPath,
+        fileName,
+        fileContent,
+        { openInEditor: false, notify: false },
+      );
+
+      if (created) {
+        createdFiles.push(join(resolvedFolderPath, fileName));
+      }
+    }
+
+    await this.finalizeFileCreation(createdFiles, fileNames.length);
+  }
+
+  /**
+   * The parseFileNames method.
+   *
+   * @function parseFileNames
+   * @private
+   * @memberof FileGeneratorService
+   *
+   * @param {string} input - The raw file names input
+   *
+   * @returns {string[]} - The parsed file names
+   */
+  private parseFileNames(input: string): string[] {
+    return input
+      .split(',')
+      .map((name) => name.trim())
+      .filter((name) => name.length > 0);
+  }
+
+  /**
+   * The finalizeFileCreation method.
+   *
+   * @function finalizeFileCreation
+   * @private
+   * @async
+   * @memberof FileGeneratorService
+   *
+   * @param {string[]} createdFiles - The created file paths
+   * @param {number} requestedCount - The requested file count
+   *
+   * @returns {Promise<void>}
+   */
+  private async finalizeFileCreation(
+    createdFiles: string[],
+    requestedCount: number,
+  ): Promise<void> {
+    if (createdFiles.length === 0) {
+      if (requestedCount === 1) {
+        return;
+      }
+
+      const message = l10n.t(
+        'No files were created. Check for duplicate names and try again',
+      );
+      window.showWarningMessage(message);
+      return;
+    }
+
+    const lastCreatedFile = createdFiles[createdFiles.length - 1];
+    const openPath = Uri.file(lastCreatedFile);
+    const document = await workspace.openTextDocument(openPath);
+    await commands.executeCommand('workbench.action.files.saveAll');
+    await window.showTextDocument(document);
+
+    if (createdFiles.length === 1) {
+      const message = l10n.t('File created successfully!');
+      window.showInformationMessage(message);
+      return;
+    }
+
+    if (createdFiles.length === requestedCount) {
+      const message = l10n.t(
+        '{0} files created successfully!',
+        createdFiles.length,
+      );
+      window.showInformationMessage(message);
+      return;
+    }
+
+    const message = l10n.t(
+      'Created {0} of {1} files',
+      createdFiles.length,
+      requestedCount,
+    );
+    window.showWarningMessage(message);
   }
 
   /**
@@ -545,51 +662,60 @@ export class FileGeneratorService {
     directoryPath: string,
     fileName: string,
     fileContent: string,
-  ): Promise<void> {
+    options: { openInEditor?: boolean; notify?: boolean } = {},
+  ): Promise<boolean> {
+    const { openInEditor = true, notify = true } = options;
     const file = join(directoryPath, fileName);
 
     if (!existsSync(dirname(file))) {
       mkdirSync(dirname(file), { recursive: true });
     }
 
-    access(file, (err: any) => {
-      if (err) {
-        open(file, 'w+', (err: any, fd: any) => {
-          if (err) {
-            const message = l10n.t(
-              'The file has not been created! Please try again',
-            );
-            window.showErrorMessage(message);
-            return;
-          }
-
-          writeFile(fd, fileContent, 'utf8', (err: any) => {
-            if (err) {
-              const message = l10n.t(
-                'The {0} has been created successfully',
-                fileName,
-              );
-              window.showErrorMessage(message);
-              return;
-            }
-
-            const openPath = Uri.file(file);
-
-            workspace.openTextDocument(openPath).then(async (filename) => {
-              await commands.executeCommand('workbench.action.files.saveAll');
-              await window.showTextDocument(filename);
-            });
-          });
-        });
-
-        const message = l10n.t('File created successfully!');
-        window.showInformationMessage(message);
-      } else {
+    if (existsSync(file)) {
+      if (notify) {
         const message = l10n.t(
           'The file name already exists! Please enter a different name',
         );
         window.showWarningMessage(message);
       }
-    });
+
+      return false;
+    }
+
+    try {
+      await new Promise<void>((resolve, reject) => {
+        writeFile(file, fileContent, 'utf8', (error) => {
+          if (error) {
+            reject(error);
+            return;
+          }
+
+          resolve();
+        });
+      });
+
+      if (openInEditor) {
+        const openPath = Uri.file(file);
+        const document = await workspace.openTextDocument(openPath);
+        await commands.executeCommand('workbench.action.files.saveAll');
+        await window.showTextDocument(document);
+      }
+
+      if (notify) {
+        const message = l10n.t('File created successfully!');
+        window.showInformationMessage(message);
+      }
+
+      return true;
+    } catch {
+      if (notify) {
+        const message = l10n.t(
+          'The file has not been created! Please try again',
+        );
+        window.showErrorMessage(message);
+      }
+
+      return false;
+    }
   }
 }
